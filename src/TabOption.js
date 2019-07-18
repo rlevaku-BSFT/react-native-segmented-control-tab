@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react'
 import {
   View,
-  TouchableOpacity,
+  TouchableHighlight,
   StyleSheet,
   Text,
 } from 'react-native'
@@ -127,7 +127,7 @@ export default class TabOption extends PureComponent<Props> {
       enabled,
     } = this.props
     return (
-      <TouchableOpacity
+      <TouchableHighlight
         style={[
           styles.tabStyle,
           tabStyle,
@@ -142,6 +142,8 @@ export default class TabOption extends PureComponent<Props> {
         onPress={() => onTabPress(index)}
         disabled={!enabled}
         activeOpacity={activeTabOpacity}
+        underlayColor={'#00BCEB30'}
+
       >
         <View style={{ flexDirection: 'row' }}>
           <Text
@@ -186,7 +188,7 @@ export default class TabOption extends PureComponent<Props> {
             </View>
           )}
         </View>
-      </TouchableOpacity>
+      </TouchableHighlight>
     )
   }
 }
